@@ -8,7 +8,6 @@ import {
   Route,
   useLocation
 } from "react-router-dom";
-import QuizStart from './Components/QuizStart';
 import Game from './Components/Game';
 import data from "./Content/questions"
 import React, {
@@ -128,9 +127,16 @@ function App() {
           childRef.current.callMethod('next');
         break;
       case 'menu':
+        assistantRef.current.sendData({
+          action: {
+            action_id: 'list_theme',
+            parameters: {
+              number: null
+            }
+          }
+        })
         navigate('/');
         break;
-
 
       default:
       // console.warn('dispatchAssistantAction: Unknown action.type:', action.type)
@@ -174,7 +180,7 @@ function App() {
 
   function assistant_global(n, state) {
     console.log(n, state)
-    assistantRef.current.sendAction({
+    assistantRef.current.sendData({
       action: {
         action_id: state,
         parameters: {
@@ -204,7 +210,7 @@ function App() {
       })()}
       <Routes>
         <Route exact path="/" element={<Menu assistant_global={assistant_global} />} />
-        <Route exact path="/game" element={<Game ref={childRef} />} />
+        <Route exact path="/game" element={<Game ref={childRef} assistant_global={assistant_global} />} />
       </Routes>
     </div>
   );

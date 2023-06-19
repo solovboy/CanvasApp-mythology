@@ -98,17 +98,18 @@ const Game = React.forwardRef((props, ref) => {
   }
 
   function toMenu() {
+    props.assistant_global(null, "list_theme")
     navigate("/");
   }
 
   return (
     <div className={"game " + gameClass}>
       <div className="question-block">
-        <h1 style={{ margin: "0"}}>{header}</h1>
+        <h1 style={{ margin: "0" }}>{header}</h1>
 
         {gameState == "game" ? (
           <>
-            <h3 style={{ textAlign: "center" }}>{currentQuest.question}</h3>
+            <h3 style={{ textAlign: "center" }}>Вопрос {currentQuestIdx + 1} из {questions.length}: {currentQuest.question}</h3>
             <div className="answers">
               <div>
                 <Button
