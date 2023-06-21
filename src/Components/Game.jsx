@@ -109,12 +109,14 @@ const Game = React.forwardRef((props, ref) => {
 
         {gameState == "game" ? (
           <>
-            <h3 style={{ textAlign: "center" }}>Вопрос {currentQuestIdx + 1} из {questions.length}: {currentQuest.question}</h3>
+            <h4 style={{ textAlign: "center" }}>Вопрос {currentQuestIdx + 1} из {questions.length}: {currentQuest.question}</h4>
             <div className="answers">
               <div>
                 <Button
                   view="secondary"
                   onClick={() => checkAnswer(1)}
+                  disabled={currentAnswer != null}
+                  size={'m'}
                   className={
                     "answer " +
                     (wrongAnswer == 1 ? "incorrect " : "") +
@@ -126,7 +128,9 @@ const Game = React.forwardRef((props, ref) => {
                 </Button>
                 <Button
                   view="secondary"
+                  size={'m'}
                   onClick={() => checkAnswer(2)}
+                  disabled={currentAnswer != null}
                   className={
                     "answer " +
                     (wrongAnswer == 2 ? "incorrect " : "") +
@@ -137,8 +141,10 @@ const Game = React.forwardRef((props, ref) => {
                   <div className="answer-text">{currentQuest.answers[1]}</div>
                 </Button>
                 <Button
+                  size={'m'}
                   view="secondary"
                   onClick={() => checkAnswer(3)}
+                  disabled={currentAnswer != null}
                   className={
                     "answer " +
                     (wrongAnswer == 3 ? "incorrect " : "") +
@@ -149,8 +155,10 @@ const Game = React.forwardRef((props, ref) => {
                   <div className="answer-text">{currentQuest.answers[2]}</div>
                 </Button>
                 <Button
+                  size={'m'}
                   view="secondary"
                   onClick={() => checkAnswer(4)}
+                  disabled={currentAnswer != null}
                   className={
                     "answer " +
                     (wrongAnswer == 4 ? "incorrect " : "") +
@@ -169,6 +177,7 @@ const Game = React.forwardRef((props, ref) => {
                 view="primary"
                 onClick={nextQuestion}
                 disabled={currentAnswer == null}
+                focused={currentAnswer != null}
               >
                 Следующий вопрос
               </Button>
@@ -184,7 +193,8 @@ const Game = React.forwardRef((props, ref) => {
             <p className="corr-ans-count">
               {currentAnswersCount + " из " + questions.length}
             </p>
-            <Button size="l" view="primary" onClick={toMenu}>
+            <Button size="l" view="primary" onClick={toMenu}
+              focused={true}>
               Играть снова
             </Button>
           </div>

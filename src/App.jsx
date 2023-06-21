@@ -57,7 +57,6 @@ function App() {
   const [page, setPage] = useState(0)
   const navigate = useNavigate();
   const initialize = (getState) => {
-    debugger;
     if (process.env.NODE_ENV === "development") {
       return createSmartappDebugger({
         token: process.env.REACT_APP_TOKEN ?? "",
@@ -108,8 +107,6 @@ function App() {
   const dispatchAssistantAction = (action) => {
     // notify(`action ${action} `);
     if (!action) return;
-
-    debugger;
 
     switch (action.type) { //action.types
       case 'new_topic': {

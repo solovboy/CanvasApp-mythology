@@ -134,7 +134,7 @@ body,
 }
 
 .answers {
-  height: 325px;
+  height: 240px;
   background: rgba(34, 31, 24, 0.8);
   padding: var(--padding-block);
   border-radius: 16px;
@@ -142,14 +142,14 @@ body,
   flex-direction: column;
   width: 100%;
   margin-bottom: 5px;
+  padding: 5px;
 }
 
 .answer {
   cursor: pointer;
   width: 90%;
   margin-left: 5%;
-  margin-top: 15px;
-  margin-bottom: 9px;
+  margin-top: 10px;
   padding: 10px;
   color: white;
   border-radius: 4px;
