@@ -171,29 +171,29 @@ const Game = React.forwardRef((props, ref) => {
 
             <div style={{display: "flex", flexDirection: "row", alignContent: "center"}}>
               <Button
-                size="s"
+                size="m"
                 view="primary"
                 onClick={nextQuestion}
                 disabled={currentAnswer == null}
                 // focused={currentAnswer != null}
               >
-                Следующий вопрос
+                <h3 >Следующий вопрос</h3>
               </Button>
-              <Button size="s" view="checked" onClick={toMenu} style={{marginLeft: "5px"}}>
-                Список тем
+              <Button size="m" view="checked" onClick={toMenu} style={{marginLeft: "5px"}}>
+              <h3 >Список тем</h3>
               </Button>
             </div>
           </>
         ) : (
           <div className="results-block">
-            <p className="results-comment">{getComment()}</p>
-            <p className="results-comment">Верных ответов</p>
+            <h3 className="results-comment">{getComment()}</h3>
+            <h3 className="results-comment">Верных ответов</h3>
             <p className="corr-ans-count">
               {currentAnswersCount + " из " + questions.length}
             </p>
             <Button size="l" view="primary" onClick={toMenu}
               focused={true}>
-              Играть снова
+               <h3 >Играть снова</h3>
             </Button>
           </div>
         )}

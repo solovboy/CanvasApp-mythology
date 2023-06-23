@@ -137,8 +137,35 @@ body,
 
 @media screen and (max-width: 900px) {
   .question-block {
-    width: 90vw;
+    width: 95vw;
   }  
+  h2{
+    font-size: 1.2em;
+  } 
+  .results-comment p{
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  h1{
+    font-size: 3em;
+  } 
+  h2{
+    font-size: 2em;
+  } 
+  h3{
+    font-size: 1.5em;
+  }
+  .menu-btn span{
+    font-size: 1.5em;
+  }
+  span{
+    font-size: 1.5em;
+  }
+  .results-comment {
+    font-size: 2em;
+  }
 }
 
 .answers {
@@ -168,7 +195,6 @@ body,
 
 .answer-text {
   margin-left: 10px;
-  margin-top: 16px;
   margin-right: auto;
 }
 
@@ -236,7 +262,6 @@ body,
 }
 
 .results-comment {
-  font-size: 20px;
   font-weight: 500;
   text-align: center;
 }
