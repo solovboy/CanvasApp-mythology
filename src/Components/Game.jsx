@@ -109,7 +109,7 @@ const Game = React.forwardRef((props, ref) => {
 
         {gameState == "game" ? (
           <>
-            <h2 style={{ textAlign: "center" }}>Вопрос {currentQuestIdx + 1} из {questions.length}: {currentQuest.question}</h2>
+            <h1 className="question_name" style={{ textAlign: "center" }}>Вопрос {currentQuestIdx + 1} из {questions.length}: {currentQuest.question}</h1>
             <div className="answers">
                 <Button
                   view="overlay"
@@ -186,14 +186,14 @@ const Game = React.forwardRef((props, ref) => {
           </>
         ) : (
           <div className="results-block">
-            <h3 className="results-comment">{getComment()}</h3>
-            <h3 className="results-comment">Верных ответов</h3>
+            <h2 className="results-comment">{getComment()}</h2>
+            <h1 className="results-comment">Верных ответов</h1>
             <p className="corr-ans-count">
               {currentAnswersCount + " из " + questions.length}
             </p>
-            <Button size="l" view="primary" onClick={toMenu}
+            <Button className="results-comment" size="l" view="primary" onClick={toMenu}
               focused={true}>
-               <h3 >Играть снова</h3>
+               <h2 >Играть снова</h2>
             </Button>
           </div>
         )}
